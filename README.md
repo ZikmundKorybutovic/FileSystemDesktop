@@ -12,7 +12,9 @@ among files with the same names stored in different subfolders.
 
 The key to reading reports is following:
 [A] added files
+
 [M] modified files (incl. version #)
+
 [D] deleted files or subfolders (as per subfolders - only deleted ones are reported)
 
 Possible limitations
