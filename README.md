@@ -11,6 +11,7 @@ File name consists of the full file path trimmed of the root folder path - this 
 among files with the same names stored in different subfolders.
 
 The key to reading reports is following:
+
 [A] added files
 
 [M] modified files (incl. version #)
