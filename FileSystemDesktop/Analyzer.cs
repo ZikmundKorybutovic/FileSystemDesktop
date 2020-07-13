@@ -152,7 +152,7 @@ namespace FileSystemAnalyzer
         /// <param name="path">Path to the serialized file</param>
         private object deserializeItems(string path, ItemType itemType)
         {
-            ISerializationHelper serialization = new JsonSerializationHelper();
+            var serialization = new JsonSerializationHelper();
             
             switch (itemType)
             {
@@ -171,7 +171,7 @@ namespace FileSystemAnalyzer
         /// <param name="path">Path to the file to be created</param>
         private void serializeItems(string path, List<FileItem> currentFiles, List<FolderItem> currentFolders)
         {
-            ISerializationHelper serialization = new JsonSerializationHelper();
+            var serialization = new JsonSerializationHelper();
             serialization.Serialize(currentFiles, Path.Combine(path, JSONFILENAME));
             serialization.Serialize(currentFolders, Path.Combine(path, JSONFOLDERSNAME));
         }
@@ -228,7 +228,7 @@ namespace FileSystemAnalyzer
         private List<FolderItem> analyzeFolders(List<FolderItem> originalFolders, List<FolderItem> currentFolders)
         {
             var deletedFolders = new List<FolderItem>();
-            // we just keep track of deleted subfolders
+            // we keep track of deleted subfolders only
             foreach (var originalFolder in originalFolders)
             {
                 var folder = currentFolders.FirstOrDefault(f => f.Name == originalFolder.Name);
